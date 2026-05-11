@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KLX Solutions - Electrical Services Brussels & Belgium</title>
+  <meta name="description" content="Professional electrical services in Brussels & Belgium. Residential, industrial, EV chargers, fuse box replacement. 10+ years experience.">
+  <style>
+    :root {
+      --background: 0 0% 4%;
+      --foreground: 0 0% 95%;
+      --card: 0 0% 6%;
+      --primary: 42 98% 53%;
+      --primary-foreground: 0 0% 4%;
+      --secondary: 0 0% 10%;
+      --secondary-foreground: 0 0% 95%;
+      --muted: 0 0% 10%;
+      --muted-foreground: 0 0% 55%;
+      --accent: 24 100% 50%;
+      --border: 0 0% 14%;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: hsl(var(--background));
+      color: hsl(var(--foreground));
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.6;
+    }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+      background: hsl(var(--background)) / 0.92;
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid hsl(var(--border));
+      padding: 16px 24px;
+    }
+    header .container { display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-weight: 900; font-size: 18px; }
+    .logo .accent { color: hsl(var(--primary)); }
+    nav a { color: hsl(var(--muted-foreground)); text-decoration: none; margin: 0 24px; transition: color 0.3s; font-size: 14px; font-weight: 500; }
+    nav a:hover { color: hsl(var(--foreground)); }
+    main { margin-top: 70px; }
+    section { padding: 96px 24px; }
+    section:nth-child(even) { background: hsl(var(--card)); }
+    h1, h2 { font-weight: 900; margin-bottom: 16px; }
+    h1 { font-size: 56px; }
+    h2 { font-size: 42px; }
+    .accent { color: hsl(var(--primary)); }
+    .hero { text-align: center; padding-top: 120px; }
+    .hero img { width: 160px; height: 160px; border-radius: 24px; margin: 0 auto 40px; display: block; box-shadow: 0 25px 50px hsl(var(--primary)) / 0.25; }
+    .hero .tagline { font-size: 20px; color: hsl(var(--muted-foreground)); margin-bottom: 40px; }
+    .buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 40px; }
+    .btn { padding: 16px 28px; border-radius: 9999px; text-decoration: none; font-weight: 700; font-size: 14px; transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px; min-height: 48px; }
+    .btn-primary { background: hsl(var(--primary)); color: hsl(var(--primary-foreground)); }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 25px 50px hsl(var(--primary)) / 0.3); }
+    .btn-secondary { border: 2px solid hsl(var(--border)); color: hsl(var(--foreground)); }
+    .btn-secondary:hover { border-color: hsl(var(--primary)); color: hsl(var(--primary)); }
+    .stats { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-top: 40px; padding-top: 40px; border-top: 1px solid hsl(var(--border)); }
+    .stat { text-align: center; }
+    .stat-value { font-size: 48px; font-weight: 900; color: hsl(var(--primary)); }
+    .stat-label { font-size: 12px; color: hsl(var(--muted-foreground)); text-transform: uppercase; letter-spacing: 0.1em; margin-top: 8px; }
+    .section-header { text-align: center; margin-bottom: 64px; }
+    .divider { width: 56px; height: 4px; background: hsl(var(--primary)); margin: 0 auto 24px; border-radius: 9999px; }
+    .subtitle { color: hsl(var(--muted-foreground)); font-size: 18px; max-width: 512px; margin: 0 auto; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+    .card {
+      background: hsl(var(--card));
+      border: 1px solid hsl(var(--border));
+      border-radius: 16px;
+      padding: 24px;
+      transition: all 0.3s;
+    }
+    .card:hover { transform: translateY(-6px); border-color: hsl(var(--primary)); box-shadow: 0 20px 40px hsl(var(--primary)) / 0.1); }
+    .card-icon { font-size: 32px; margin-bottom: 16px; }
+    .card h3 { font-size: 18px; margin-bottom: 12px; }
+    .card p { font-size: 14px; color: hsl(var(--muted-foreground)); }
+    footer { background: #050505; border-top: 1px solid hsl(var(--border)); padding: 40px 24px; }
+    footer .grid { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 32px; }
+    footer h4 { font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 16px; color: hsl(var(--muted-foreground)); }
+    footer p { font-size: 13px; color: hsl(var(--muted-foreground)); }
+    footer a { color: hsl(var(--muted-foreground)); text-decoration: none; transition: color 0.3s; }
+    footer a:hover { color: hsl(var(--primary)); }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="logo">KLX <span class="accent">SOLUTIONS</span></div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="home" class="hero">
+      <img src="https://media.base44.com/images/public/user_6a00a71274279c19560dc38a/45c8a30c9_833144AB-385C-459B-A505-FF113C7374FD.png" alt="KLX Solutions">
+      <p class="tagline">Empowering Homes, Energizing Industries.</p>
+      <div class="buttons">
+        <a href="#contact" class="btn btn-primary">📞 Call Now</a>
+        <a href="#services" class="btn btn-secondary">Our Services</a>
+      </div>
+      <div class="stats">
+        <div class="stat">
+          <div class="stat-value">10+</div>
+          <div class="stat-label">Years Experience</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">500+</div>
+          <div class="stat-label">Projects Completed</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">24/7</div>
+          <div class="stat-label">Fast Response</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="container">
+        <div class="section-header">
+          <div class="divider"></div>
+          <h2>About <span class="accent">Us</span></h2>
+          <p class="subtitle">Trusted electricians serving Brussels & Belgium for over a decade.</p>
+        </div>
+        <div style="max-width: 640px; margin: 0 auto; text-align: center;">
+          <p style="color: hsl(var(--muted-foreground)); margin-bottom: 20px;">KLX Solutions has been providing professional electrical services for over 10 years, specializing in residential and industrial electrical installations.</p>
+          <p style="color: hsl(var(--muted-foreground)); margin-bottom: 20px;">Our goal is to deliver safe, energy-efficient, and reliable electrical solutions tailored to each client's needs.</p>
+          <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));">
+            <div style="padding: 16px; background: hsl(var(--secondary)); border: 1px solid hsl(var(--border)); border-radius: 12px; font-weight: 600; font-size: 14px;">✓ Licensed & Insured</div>
+            <div style="padding: 16px; background: hsl(var(--secondary)); border: 1px solid hsl(var(--border)); border-radius: 12px; font-weight: 600; font-size: 14px;">✓ Fast Response</div>
+            <div style="padding: 16px; background: hsl(var(--secondary)); border: 1px solid hsl(var(--border)); border-radius: 12px; font-weight: 600; font-size: 14px;">✓ Fair Pricing</div>
+            <div style="padding: 16px; background: hsl(var(--secondary)); border: 1px solid hsl(var(--border)); border-radius: 12px; font-weight: 600; font-size: 14px;">✓ Modern Solutions</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services">
+      <div class="container">
+        <div class="section-header">
+          <div class="divider"></div>
+          <h2>Our <span class="accent">Services</span></h2>
+          <p class="subtitle">A full range of electrical services for residential and small commercial clients.</p>
+        </div>
+        <div class="grid">
+          <div class="card"><div class="card-icon">🔧</div><h3>Small Repairs</h3><p>No job is too small. From minor repairs to quick fixes.</p></div>
+          <div class="card"><div class="card-icon">🏠</div><h3>House Wiring</h3><p>Full installation and wiring for apartments and houses.</p></div>
+          <div class="card"><div class="card-icon">🏭</div><h3>Industrial Work</h3><p>Installation and maintenance for industrial facilities.</p></div>
+          <div class="card"><div class="card-icon">⚙️</div><h3>System Upgrades</h3><p>Modern, safe, and future-proof electrical upgrades.</p></div>
+          <div class="card"><div class="card-icon">🔍</div><h3>Fault Finding</h3><p>Fast diagnostics and professional troubleshooting.</p></div>
+          <div class="card"><div class="card-icon">💡</div><h3>LED Lighting</h3><p>Installation of energy-efficient lighting solutions.</p></div>
+          <div class="card"><div class="card-icon">⚡</div><h3>Fuse Box Replace</h3><p>Modernizing outdated electrical panels.</p></div>
+          <div class="card"><div class="card-icon">🚗</div><h3>EV Chargers</h3><p>Home electric vehicle charging solutions.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="container">
+        <div class="section-header">
+          <div class="divider"></div>
+          <h2>Get In <span class="accent">Touch</span></h2>
+          <p class="subtitle">Looking for a reliable electrician? Contact us today.</p>
+        </div>
+        <div style="max-width: 600px; margin: 0 auto; background: hsl(var(--card)); border: 1px solid hsl(var(--border)); border-radius: 24px; padding: 40px;">
+          <div style="margin-bottom: 32px;">
+            <div style="font-size: 12px; color: hsl(var(--muted-foreground)); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px; font-weight: 700;">Phone (Spain)</div>
+            <a href="tel:+34666114258" style="font-size: 18px; font-weight: 600; color: hsl(var(--primary)); text-decoration: none;">🇪🇸 +34 666 114 258</a>
+          </div>
+          <div style="margin-bottom: 32px;">
+            <div style="font-size: 12px; color: hsl(var(--muted-foreground)); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px; font-weight: 700;">Phone (Belgium)</div>
+            <a href="tel:+32473454693" style="font-size: 18px; font-weight: 600; color: hsl(var(--primary)); text-decoration: none;">🇧🇪 +32 473 45 46 93</a>
+          </div>
+          <div>
+            <div style="font-size: 12px; color: hsl(var(--muted-foreground)); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px; font-weight: 700;">Email</div>
+            <a href="mailto:info@klxsolutions.com" style="font-size: 18px; font-weight: 600; color: hsl(var(--primary)); text-decoration: none;">info@klxsolutions.com</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="grid" style="margin-bottom: 32px;">
+        <div>
+          <div style="font-weight: 900; font-size: 18px; margin-bottom: 12px;">KLX <span class="accent">SOLUTIONS</span></div>
+          <p style="font-size: 12px; font-style: italic;">Empowering Homes, Energizing Industries.</p>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <p>🇪🇸 +34 666 114 258</p>
+          <p>🇧🇪 +32 473 45 46 93</p>
+          <p><a href="mailto:info@klxsolutions.com">info@klxsolutions.com</a></p>
+        </div>
+        <div>
+          <h4>Service Area</h4>
+          <p>Brussels & Belgium</p>
+        </div>
+      </div>
+      <div style="border-top: 1px solid hsl(var(--border)); padding-top: 24px; text-align: center; color: hsl(var(--muted-foreground)); font-size: 12px;">
+        © 2026 KLX Solutions. All rights reserved.
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
